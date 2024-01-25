@@ -15,3 +15,10 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+
+func _on_batalha_draw():
+	speed = 0
+
+
+func _on_batalha_hidden():
+	speed = 200

@@ -50,8 +50,7 @@ func _on_fugir_mouse_exited():
 func _on_area_demo_a_body_entered(body):
 	self.show()
 	get_node("descDemo").text = "Descrição do caramunhão"
-
-
+	
 func _on_area_demo_b_body_entered(body):
 	self.show()
 	get_node("descDemo").text = "Descrição do capiroto"
@@ -59,3 +58,5 @@ func _on_area_demo_b_body_entered(body):
 func _on_area_demo_c_body_entered(body):
 	self.show()
 	get_node("descDemo").text = "Descrição do tinhoso"
+
+
