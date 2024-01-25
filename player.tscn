@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dj08vxx5imjqm"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_fq7p0"]
-[ext_resource type="Texture2D" uid="uid://cykuxaq1cc13e" path="res://icon.svg" id="2_yxayd"]
+[ext_resource type="Texture2D" uid="uid://biprkw37l3xs7" path="res://Sprites/Personagem (Cenario)/Gnomo.png" id="2_mkejf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfnrl"]
 radius = 28.0179
@@ -22,8 +22,7 @@ script = ExtResource("1_fq7p0")
 shape = SubResource("CircleShape2D_dfnrl")
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_yxayd")
+texture = ExtResource("2_mkejf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.75, 1.75)
