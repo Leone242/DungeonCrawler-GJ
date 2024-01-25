@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=6 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qfuxr"]
+polygon = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ukgd"]
 texture = ExtResource("1_plorp")
@@ -1207,6 +1210,7 @@ texture_region_size = Vector2i(32, 32)
 7:49/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:49/0/physics_layer_0/angular_velocity = 0.0
 0:50/0 = 0
+0:50/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_qfuxr")
 0:50/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:50/0/physics_layer_0/angular_velocity = 0.0
 0:50/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -3202,6 +3206,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_f1xdi"]
 tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 custom_data_layer_0/name = ""

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bufe4chhh7kpw"]
+[gd_scene load_steps=3 format=3 uid="uid://bufe4chhh7kpw"]
 
 [ext_resource type="Texture2D" uid="uid://cykuxaq1cc13e" path="res://icon.svg" id="1_q86bl"]
+[ext_resource type="Script" path="res://batalha.gd" id="1_uwuey"]
 
 [node name="Batalha" type="Node2D"]
+script = ExtResource("1_uwuey")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1092.0
@@ -30,19 +32,19 @@ offset_top = 448.0
 offset_right = 501.0
 offset_bottom = 619.0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Trocadilho" type="Button" parent="Control"]
 layout_mode = 1
 offset_right = 146.0
 offset_bottom = 54.0
 text = "Trocadilho"
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="Zoar" type="Button" parent="Control"]
 offset_top = 57.0
 offset_right = 146.0
 offset_bottom = 111.0
 text = "Zoar"
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="Fugir" type="Button" parent="Control"]
 offset_top = 114.0
 offset_right = 146.0
 offset_bottom = 168.0
@@ -67,3 +69,7 @@ offset_top = 576.0
 offset_right = 178.0
 offset_bottom = 599.0
 text = "HP 50/50"
+
+[connection signal="pressed" from="Control/Trocadilho" to="." method="_on_trocadilho_pressed"]
+[connection signal="pressed" from="Control/Zoar" to="." method="_on_zoar_pressed"]
+[connection signal="pressed" from="Control/Fugir" to="." method="_on_fugir_pressed"]
