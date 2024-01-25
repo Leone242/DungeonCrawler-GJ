@@ -60,3 +60,9 @@ func _on_area_demo_c_body_entered(body):
 	get_node("descDemo").text = "Descrição do tinhoso"
 
 
+
+
+func _on_area_demo_master_body_entered(body):
+	await get_tree().create_timer(2.0)
+	self.show()
+	get_node("descDemo").text = "Descrição do demônio mais pika dessa dungeon"
