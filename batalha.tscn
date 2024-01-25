@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://bufe4chhh7kpw"]
+
+[ext_resource type="Texture2D" uid="uid://cykuxaq1cc13e" path="res://icon.svg" id="1_q86bl"]
+
+[node name="Batalha" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1092.0
+offset_bottom = 654.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_top = 416.0
+offset_right = 1082.0
+offset_bottom = 649.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(128, 512)
+texture = ExtResource("1_q86bl")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(544, 224)
+scale = Vector2(3, 3)
+texture = ExtResource("1_q86bl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 352.0
+offset_top = 448.0
+offset_right = 501.0
+offset_bottom = 619.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+offset_right = 146.0
+offset_bottom = 54.0
+text = "Trocadilho"
+
+[node name="Button2" type="Button" parent="Control"]
+offset_top = 57.0
+offset_right = 146.0
+offset_bottom = 111.0
+text = "Zoar"
+
+[node name="Button3" type="Button" parent="Control"]
+offset_top = 114.0
+offset_right = 146.0
+offset_bottom = 168.0
+text = "Fugir"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 640.0
+offset_top = 448.0
+offset_right = 1027.0
+offset_bottom = 610.0
+text = "descrição .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 576.0
+offset_right = 178.0
+offset_bottom = 599.0
+text = "HP 50/50"
