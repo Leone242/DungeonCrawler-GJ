@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=22 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
 [ext_resource type="Texture2D" uid="uid://dkjmd1gsgfm6r" path="res://Sprites/Personagem (Cenario)/demonioA.png" id="3_wghu4"]
 [ext_resource type="Texture2D" uid="uid://dpcvyijaqw17f" path="res://Sprites/Personagem (Cenario)/demonioB.png" id="4_yxgp8"]
 [ext_resource type="Texture2D" uid="uid://cn0iuxx66bioc" path="res://Sprites/Personagem (Cenario)/demonioC.png" id="5_uyjbq"]
+[ext_resource type="PackedScene" uid="uid://bufe4chhh7kpw" path="res://batalha.tscn" id="6_mph2q"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qfuxr"]
 polygon = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -3295,26 +3296,26 @@ position = Vector2(864, 1056)
 energy = 0.25
 blend_mode = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AreaDemoA" type="Area2D" parent="."]
 position = Vector2(768, 672)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDemoA"]
 z_index = 1
 position = Vector2(32, -1)
 shape = SubResource("CapsuleShape2D_n4x83")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="AreaDemoB" type="Area2D" parent="."]
 position = Vector2(1248, 1248)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDemoB"]
 z_index = 1
 position = Vector2(1, -63)
 shape = SubResource("CapsuleShape2D_eqyf1")
 
-[node name="Area2D3" type="Area2D" parent="."]
+[node name="AreaDemoC" type="Area2D" parent="."]
 position = Vector2(1152, 672)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDemoC"]
 z_index = 1
 position = Vector2(31, 0)
 shape = SubResource("CapsuleShape2D_ctaih")
@@ -3333,3 +3334,12 @@ layer_0/tile_data = PackedInt32Array(1179667, 1, 0)
 tile_set = SubResource("TileSet_cboda")
 format = 2
 layer_0/tile_data = PackedInt32Array(655378, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Batalha" parent="CanvasLayer" instance=ExtResource("6_mph2q")]
+visible = false
+
+[connection signal="body_entered" from="AreaDemoA" to="CanvasLayer/Batalha" method="_on_area_demo_a_body_entered"]
+[connection signal="body_entered" from="AreaDemoB" to="CanvasLayer/Batalha" method="_on_area_demo_b_body_entered"]
+[connection signal="body_entered" from="AreaDemoC" to="CanvasLayer/Batalha" method="_on_area_demo_c_body_entered"]

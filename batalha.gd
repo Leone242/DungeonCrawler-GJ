@@ -20,7 +20,7 @@ func _on_zoar_pressed():
 
 
 func _on_fugir_pressed():
-	pass # Replace with function body.
+	self.hide()
 
 
 func _on_trocadilho_mouse_entered():
@@ -45,3 +45,17 @@ func _on_fugir_mouse_entered():
 func _on_fugir_mouse_exited():
 	$Control/Fugir/descFugir.hide()
 	$descDemo.show()
+
+
+func _on_area_demo_a_body_entered(body):
+	self.show()
+	get_node("descDemo").text = "Descrição do caramunhão"
+
+
+func _on_area_demo_b_body_entered(body):
+	self.show()
+	get_node("descDemo").text = "Descrição do capiroto"
+
+func _on_area_demo_c_body_entered(body):
+	self.show()
+	get_node("descDemo").text = "Descrição do tinhoso"

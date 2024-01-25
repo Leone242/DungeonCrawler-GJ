@@ -15,11 +15,11 @@ offset_top = 416.0
 offset_right = 1082.0
 offset_bottom = 649.0
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="SpritePlayer" type="Sprite2D" parent="."]
 position = Vector2(128, 512)
 texture = ExtResource("1_q86bl")
 
-[node name="Icon2" type="Sprite2D" parent="."]
+[node name="SpriteDemo" type="Sprite2D" parent="."]
 position = Vector2(544, 224)
 scale = Vector2(3, 3)
 texture = ExtResource("1_q86bl")
