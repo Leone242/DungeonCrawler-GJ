@@ -38,38 +38,66 @@ offset_right = 146.0
 offset_bottom = 54.0
 text = "Trocadilho"
 
+[node name="descTrocadilho" type="Label" parent="Control/Trocadilho"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "descrição do trocadilho"
+
 [node name="Zoar" type="Button" parent="Control"]
+layout_mode = 0
 offset_top = 57.0
 offset_right = 146.0
 offset_bottom = 111.0
 text = "Zoar"
 
+[node name="descZoar" type="Label" parent="Control/Zoar"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = -57.0
+offset_right = 544.0
+offset_bottom = 39.0
+text = "descrição da zoação"
+
 [node name="Fugir" type="Button" parent="Control"]
+layout_mode = 0
 offset_top = 114.0
 offset_right = 146.0
 offset_bottom = 168.0
 text = "Fugir"
 
-[node name="Label" type="Label" parent="."]
+[node name="descFugir" type="Label" parent="Control/Fugir"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = -114.0
+offset_right = 328.0
+offset_bottom = -91.0
+text = "Sair voado"
+
+[node name="descDemo" type="Label" parent="."]
 offset_left = 640.0
 offset_top = 448.0
 offset_right = 1027.0
 offset_bottom = 610.0
-text = "descrição .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-"
+text = "descrição do bichão"
 
-[node name="Label2" type="Label" parent="."]
+[node name="PlayerHP" type="Label" parent="."]
 offset_left = 96.0
 offset_top = 576.0
 offset_right = 178.0
 offset_bottom = 599.0
 text = "HP 50/50"
 
+[connection signal="mouse_entered" from="Control/Trocadilho" to="." method="_on_trocadilho_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Trocadilho" to="." method="_on_trocadilho_mouse_exited"]
 [connection signal="pressed" from="Control/Trocadilho" to="." method="_on_trocadilho_pressed"]
+[connection signal="mouse_entered" from="Control/Zoar" to="." method="_on_zoar_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Zoar" to="." method="_on_zoar_mouse_exited"]
 [connection signal="pressed" from="Control/Zoar" to="." method="_on_zoar_pressed"]
+[connection signal="mouse_entered" from="Control/Fugir" to="." method="_on_fugir_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Fugir" to="." method="_on_fugir_mouse_exited"]
 [connection signal="pressed" from="Control/Fugir" to="." method="_on_fugir_pressed"]

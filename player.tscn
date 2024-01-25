@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://biprkw37l3xs7" path="res://Sprites/Personagem (Cenario)/Gnomo.png" id="2_mkejf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfnrl"]
-radius = 28.0179
+radius = 22.0
 
 [sub_resource type="Gradient" id="Gradient_vngax"]
 offsets = PackedFloat32Array(0, 0.696864)
@@ -16,6 +16,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_fq7p0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -30,7 +31,6 @@ zoom = Vector2(1.75, 1.75)
 [node name="PointLight2D" type="PointLight2D" parent="."]
 z_index = -1
 scale = Vector2(3, 3)
-color = Color(0.980392, 0.984314, 0.686275, 1)
 energy = 0.8
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_mbko5")

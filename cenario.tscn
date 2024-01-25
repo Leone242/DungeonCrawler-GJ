@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=21 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
+[ext_resource type="Texture2D" uid="uid://dkjmd1gsgfm6r" path="res://Sprites/Personagem (Cenario)/demonioA.png" id="3_wghu4"]
+[ext_resource type="Texture2D" uid="uid://dpcvyijaqw17f" path="res://Sprites/Personagem (Cenario)/demonioB.png" id="4_yxgp8"]
+[ext_resource type="Texture2D" uid="uid://cn0iuxx66bioc" path="res://Sprites/Personagem (Cenario)/demonioC.png" id="5_uyjbq"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qfuxr"]
 polygon = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -3213,6 +3216,63 @@ custom_data_layer_0/name = ""
 custom_data_layer_0/type = 0
 sources/0 = SubResource("TileSetAtlasSource_7ukgd")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4x83"]
+radius = 51.0
+height = 102.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eqyf1"]
+radius = 52.0
+height = 104.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctaih"]
+radius = 56.0
+height = 112.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qp2uj"]
+polygon = PackedVector2Array(-8.48528, -28.0191, -14.5841, -23.0694, -14.4957, -14.1421, -10.7834, -9.89949, -19.4454, -6.54074, -22.8042, -2.03293, -22.539, 2.03293, -26.4281, 6.89429, -26.6933, 17.059, -23.5997, 21.8319, -19.1803, 21.8319, -16.8822, 19.0919, -17.1473, 14.2305, -13.7002, 6.98268, -12.286, 12.6395, -12.8163, 17.5893, -10.3414, 26.4281, -6.36396, 26.9585, -0.265163, 18.2964, 6.01041, 26.7817, 10.1647, 26.6049, 12.7279, 18.2964, 12.8163, 11.9324, 14.0537, 6.98268, 17.9428, 14.4073, 17.1473, 19.7106, 19.3571, 21.7435, 24.13, 21.5668, 26.7817, 16.9706, 26.7817, 6.71752, 22.8926, 2.56326, 22.6274, -2.91681, 18.3848, -7.24784, 11.1369, -8.92722, 14.5841, -14.3189, 14.8492, -22.8042, 9.28078, -28.0191, 8.39689, -23.9532, 4.06586, -20.5945, -3.88909, -20.4177, -7.95495, -22.981)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ws0wx"]
+texture = ExtResource("3_wghu4")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_qp2uj")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_gege7"]
+tile_size = Vector2i(64, 64)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_ws0wx")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f6krg"]
+polygon = PackedVector2Array(-4.15425, -28.6378, -9.104, -28.5494, -14.6725, -23.5113, -15.026, -14.4073, -10.7834, -11.0485, -10.6066, -9.36916, -16.2635, -8.57367, -21.8319, -5.12652, -21.7435, 0, -25.3675, 3.09359, -25.8094, 17.059, -23.4229, 18.6499, -19.1803, 18.9151, -16.2635, 16.1751, -15.9099, 11.0485, -14.3189, 9.81111, -14.0537, 5.92202, -11.844, 8.83884, -12.0208, 19.3571, -9.36917, 25.721, -4.77297, 25.8094, -2.38648, 21.6551, -2.03293, 19.799, 2.38649, 20.0642, 2.38649, 21.7435, 4.94975, 25.721, 9.81111, 25.9862, 11.9324, 19.799, 12.0208, 9.28078, 13.5234, 6.36396, 14.4073, 10.0763, 16.2635, 12.7279, 16.4402, 15.9983, 19.7106, 18.7383, 24.13, 18.7383, 26.163, 16.7938, 26.0746, 3.53554, 21.9203, 0, 21.7435, -5.3033, 16.1751, -8.57367, 11.0485, -9.104, 11.1369, -10.7834, 15.026, -14.3189, 15.1144, -23.5113, 9.54594, -28.5494, 4.59619, -28.461, 4.24264, -24.6603, 5.48008, -22.539, 5.12652, -20.6829, -4.59619, -20.5061, -5.21491, -22.8926, -4.33103, -24.7487)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vi17d"]
+texture = ExtResource("4_yxgp8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_f6krg")
+
+[sub_resource type="TileSet" id="TileSet_8p8ja"]
+tile_size = Vector2i(64, 64)
+occlusion_layer_0/light_mask = 1
+sources/1 = SubResource("TileSetAtlasSource_vi17d")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bw0ch"]
+polygon = PackedVector2Array(-15.9099, -25.9862, -19.4454, -22.8926, -19.799, -15.9983, -12.3744, -9.54594, -11.844, -6.89429, -16.5286, -6.8059, -21.7435, -2.56326, -21.4784, 2.38649, -24.3952, 5.48008, -25.0139, 7.95495, -26.5165, 9.19239, -26.8701, 13.877, -23.6881, 16.4402, -21.3016, 16.617, -18.208, 13.5234, -18.3848, 11.9324, -15.2912, 10.0763, -15.5563, 7.86657, -12.9047, 8.04334, -11.7556, 9.8995, -11.9324, 17.5893, -9.81111, 23.4229, -5.12652, 23.7765, -2.03293, 20.7713, -2.20971, 19.0919, 2.12132, 19.0919, 2.38649, 20.6829, 5.03814, 24.13, 10.253, 23.5113, 11.844, 17.9428, 12.1976, 10.0763, 13.0815, 7.77818, 15.5564, 8.04334, 15.7331, 10.0763, 17.8544, 11.5789, 18.3848, 13.7886, 21.5668, 17.1473, 24.13, 16.7054, 26.8701, 13.7886, 26.8701, 9.36917, 24.572, 7.6014, 24.8371, 5.39169, 21.8319, 3.00521, 22.0971, -1.5026, 17.7661, -6.8059, 12.8163, -6.8059, 11.0485, -6.09879, 11.7557, -8.75044, 19.1803, -15.1144, 19.7106, -22.4506, 16.0867, -25.8978, 14.0537, -25.5442, 11.3137, -19.0035, 5.74524, -17.2357, -6.45235, -17.5893, -12.1092, -19.2687, -13.1699, -24.9255)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kji2k"]
+texture = ExtResource("5_uyjbq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bw0ch")
+
+[sub_resource type="TileSet" id="TileSet_cboda"]
+tile_size = Vector2i(64, 64)
+occlusion_layer_0/light_mask = 1
+sources/0 = SubResource("TileSetAtlasSource_kji2k")
+
 [node name="Cenario" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3232,4 +3292,44 @@ layer_2/tile_data = PackedInt32Array(3670061, 458752, 43, 3604525, 458752, 43, 3
 position = Vector2(864, 1056)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.25
 blend_mode = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(768, 672)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(32, -1)
+shape = SubResource("CapsuleShape2D_n4x83")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1248, 1248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+z_index = 1
+position = Vector2(1, -63)
+shape = SubResource("CapsuleShape2D_eqyf1")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(1152, 672)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+z_index = 1
+position = Vector2(31, 0)
+shape = SubResource("CapsuleShape2D_ctaih")
+
+[node name="DemoA" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gege7")
+format = 2
+layer_0/tile_data = PackedInt32Array(655372, 1, 0)
+
+[node name="DemoB" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_8p8ja")
+format = 2
+layer_0/tile_data = PackedInt32Array(1179667, 1, 0)
+
+[node name="DemoC" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cboda")
+format = 2
+layer_0/tile_data = PackedInt32Array(655378, 0, 0)
