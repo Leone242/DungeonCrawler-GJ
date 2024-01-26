@@ -77,7 +77,9 @@ func _on_area_demo_c_body_entered(body):
 
 
 func _on_area_demo_master_body_entered(body):
-	get_tree().create_timer(2.0)
+	await get_tree().create_timer(0.5).timeout
+	$"../../AreaDemoMaster/LuzBoss".show()
+	await get_tree().create_timer(2.0).timeout
 	self.show()
 	get_node("descDemo").text = "Descrição do demônio mais pika dessa dungeon"
 	$SpriteDemoElderich.show()

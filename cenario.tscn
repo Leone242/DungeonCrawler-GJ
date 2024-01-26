@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=30 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
@@ -3276,8 +3276,19 @@ occlusion_layer_0/light_mask = 1
 sources/0 = SubResource("TileSetAtlasSource_kji2k")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofp7b"]
-radius = 94.0
+radius = 155.0
 height = 360.0
+
+[sub_resource type="Gradient" id="Gradient_kqobi"]
+offsets = PackedFloat32Array(0.268293, 0.728223)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ht36b"]
+gradient = SubResource("Gradient_kqobi")
+width = 250
+height = 250
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkucr"]
 size = Vector2(98, 29)
@@ -3308,10 +3319,9 @@ layer_2/tile_data = PackedInt32Array(3670061, 458752, 43, 3604525, 458752, 43, 3
 
 [node name="Player" parent="." instance=ExtResource("2_0viaw")]
 z_index = 1
-position = Vector2(562, 1132)
+position = Vector2(1476, 1990)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 blend_mode = 1
 
 [node name="AreaDemoA" type="Area2D" parent="."]
@@ -3370,6 +3380,11 @@ shape = SubResource("CapsuleShape2D_ofp7b")
 position = Vector2(1487, 2431)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ji314")
+
+[node name="LuzBoss" type="PointLight2D" parent="AreaDemoMaster"]
+visible = false
+position = Vector2(1487, 2426)
+texture = SubResource("GradientTexture2D_ht36b")
 
 [node name="Portas" type="Node2D" parent="."]
 
