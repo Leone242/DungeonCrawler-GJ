@@ -14,15 +14,29 @@ var zombarias = 0
 func _on_trocadilho_pressed():
 	zombarias+=1
 	
-	if zombarias >= 3:
+	$Control/Trocadilho.disabled = true
+	$Control/Zoar.disabled = true
+	$Control/Fugir.disabled = true
+	if zombarias == 3:
 		vencer()
+	else:
+		await get_tree().create_timer(1.0).timeout
+		turnoOponente()
 	
 
 
 func _on_zoar_pressed():
 	zombarias+=1
-	if zombarias >= 3:
+	
+	$Control/Trocadilho.disabled = true
+	$Control/Zoar.disabled = true
+	$Control/Fugir.disabled = true
+	if zombarias == 3:
 		vencer()
+	else:
+		await get_tree().create_timer(1.0).timeout
+		turnoOponente()
+	
 
 func _on_fugir_pressed():
 	self.hide()
@@ -99,4 +113,14 @@ func abrirPorta(porta: int):
 		
 func vencer():
 	abrirPorta(4)
-	print("abriu")
+	$descDemo.text = "você venceu e uma porta se abriu"
+	await get_tree().create_timer(3.0).timeout
+	hide()
+	
+func turnoOponente():
+	$descDemo.text = "o sete pele atacou causando dano"
+	await get_tree().create_timer(2.0).timeout
+	$Control/Trocadilho.disabled = false
+	$Control/Zoar.disabled = false
+	$Control/Fugir.disabled = false
+	
