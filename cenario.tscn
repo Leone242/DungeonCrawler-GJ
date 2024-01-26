@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=28 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
@@ -3279,6 +3279,18 @@ sources/0 = SubResource("TileSetAtlasSource_kji2k")
 radius = 94.0
 height = 360.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkucr"]
+size = Vector2(98, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq6po"]
+size = Vector2(96, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co2qn"]
+size = Vector2(96.5, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7uqs"]
+size = Vector2(32.5, 103)
+
 [node name="Cenario" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3295,9 +3307,11 @@ layer_2/name = "portas"
 layer_2/tile_data = PackedInt32Array(3670061, 458752, 43, 3604525, 458752, 43, 3538989, 458752, 43, 3670062, 458752, 43, 3604526, 458752, 43, 3538990, 458752, 43, 3670063, 458752, 43, 3604527, 458752, 43, 3538991, 458752, 43, 720917, 65536, 80, 720918, 65536, 80, 720919, 65536, 80, 720923, 65536, 80, 720924, 65536, 80, 720925, 65536, 80, 720935, 65536, 80, 720936, 65536, 80, 720937, 65536, 80, 1966122, 65536, 80, 2031658, 65536, 80, 2097194, 65536, 80, 1376312, 65536, 80, 1441848, 65536, 80, 1507384, 65536, 80, 2359352, 65536, 80, 2424888, 65536, 80, 2490424, 65536, 80, 196659, 65536, 40, 262195, 65536, 40, 327731, 65536, 40, 393267, 65536, 40, 458803, 65536, 40, 524339, 65536, 40, 589875, 65536, 40, 655411, 65536, 40, 720947, 65536, 40, 786483, 65536, 40, 852019, 65536, 40, 196660, 65536, 40, 262196, 65536, 40, 327732, 65536, 40, 393268, 65536, 40, 458804, 65536, 40, 524340, 65536, 40, 589876, 65536, 40, 655412, 65536, 40, 720948, 65536, 40, 786484, 65536, 40, 852020, 65536, 40, 196661, 65536, 40, 262197, 65536, 40, 327733, 65536, 40, 393269, 65536, 40, 458805, 65536, 40, 524341, 65536, 40, 589877, 65536, 40, 655413, 65536, 40, 720949, 65536, 40, 786485, 65536, 40, 852021, 65536, 40)
 
 [node name="Player" parent="." instance=ExtResource("2_0viaw")]
-position = Vector2(609, 1120)
+z_index = 1
+position = Vector2(562, 1132)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 blend_mode = 1
 
 [node name="AreaDemoA" type="Area2D" parent="."]
@@ -3356,6 +3370,89 @@ shape = SubResource("CapsuleShape2D_ofp7b")
 position = Vector2(1487, 2431)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ji314")
+
+[node name="Portas" type="Node2D" parent="."]
+
+[node name="Porta1" type="StaticBody2D" parent="Portas"]
+
+[node name="Label" type="Label" parent="Portas/Porta1"]
+offset_left = 690.0
+offset_top = 544.0
+offset_right = 756.0
+offset_bottom = 567.0
+text = "PORTA 1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta1"]
+position = Vector2(720, 560.5)
+shape = SubResource("RectangleShape2D_lkucr")
+
+[node name="Porta2" type="StaticBody2D" parent="Portas"]
+
+[node name="Label2" type="Label" parent="Portas/Porta2"]
+offset_left = 881.0
+offset_top = 546.0
+offset_right = 947.0
+offset_bottom = 569.0
+text = "PORTA 2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta2"]
+position = Vector2(913, 561.5)
+shape = SubResource("RectangleShape2D_oq6po")
+
+[node name="Porta3" type="StaticBody2D" parent="Portas"]
+
+[node name="Label3" type="Label" parent="Portas/Porta3"]
+offset_left = 1264.0
+offset_top = 545.0
+offset_right = 1330.0
+offset_bottom = 568.0
+text = "PORTA 3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta3"]
+position = Vector2(1296.25, 561.5)
+shape = SubResource("RectangleShape2D_co2qn")
+
+[node name="Porta4" type="StaticBody2D" parent="Portas"]
+position = Vector2(69, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta4"]
+position = Vector2(1291, 560)
+shape = SubResource("RectangleShape2D_t7uqs")
+
+[node name="Label3" type="Label" parent="Portas/Porta4"]
+offset_left = 1264.0
+offset_top = 545.0
+offset_right = 1330.0
+offset_bottom = 568.0
+text = "PORTA 4"
+
+[node name="Porta5" type="StaticBody2D" parent="Portas"]
+position = Vector2(514, 361)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta5"]
+position = Vector2(1293.5, 555.5)
+shape = SubResource("RectangleShape2D_t7uqs")
+
+[node name="Label3" type="Label" parent="Portas/Porta5"]
+offset_left = 1264.0
+offset_top = 545.0
+offset_right = 1330.0
+offset_bottom = 568.0
+text = "PORTA 5"
+
+[node name="Porta6" type="StaticBody2D" parent="Portas"]
+position = Vector2(516, 839)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta6"]
+position = Vector2(1292, 558)
+shape = SubResource("RectangleShape2D_t7uqs")
+
+[node name="Label3" type="Label" parent="Portas/Porta6"]
+offset_left = 1263.0
+offset_top = 545.0
+offset_right = 1329.0
+offset_bottom = 568.0
+text = "PORTA 6"
 
 [connection signal="body_entered" from="AreaDemoA" to="CanvasLayer/Batalha" method="_on_area_demo_a_body_entered"]
 [connection signal="body_entered" from="AreaDemoB" to="CanvasLayer/Batalha" method="_on_area_demo_b_body_entered"]

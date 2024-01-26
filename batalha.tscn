@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bufe4chhh7kpw"]
+[gd_scene load_steps=7 format=3 uid="uid://bufe4chhh7kpw"]
 
-[ext_resource type="Texture2D" uid="uid://cykuxaq1cc13e" path="res://icon.svg" id="1_q86bl"]
 [ext_resource type="Script" path="res://batalha.gd" id="1_uwuey"]
+[ext_resource type="Texture2D" uid="uid://biprkw37l3xs7" path="res://Sprites/Personagem (Cenario)/Gnomo.png" id="2_bm0gq"]
+[ext_resource type="Texture2D" uid="uid://dkjmd1gsgfm6r" path="res://Sprites/Personagem (Cenario)/demonioA.png" id="3_iodm3"]
+[ext_resource type="Texture2D" uid="uid://dpcvyijaqw17f" path="res://Sprites/Personagem (Cenario)/demonioB.png" id="4_ck0cg"]
+[ext_resource type="Texture2D" uid="uid://cn0iuxx66bioc" path="res://Sprites/Personagem (Cenario)/demonioC.png" id="5_p3k1t"]
+[ext_resource type="Texture2D" uid="uid://dpnevjdperlqf" path="res://Sprites/Personagem (Cenario)/Eldericth.png" id="6_ri17d"]
 
 [node name="Batalha" type="Node2D"]
 script = ExtResource("1_uwuey")
@@ -17,12 +21,32 @@ offset_bottom = 649.0
 
 [node name="SpritePlayer" type="Sprite2D" parent="."]
 position = Vector2(128, 512)
-texture = ExtResource("1_q86bl")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_bm0gq")
 
-[node name="SpriteDemo" type="Sprite2D" parent="."]
+[node name="SpriteDemoA" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(544, 224)
-scale = Vector2(3, 3)
-texture = ExtResource("1_q86bl")
+scale = Vector2(5, 5)
+texture = ExtResource("3_iodm3")
+
+[node name="SpriteDemoB" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(544, 224)
+scale = Vector2(5, 5)
+texture = ExtResource("4_ck0cg")
+
+[node name="SpriteDemoC" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(544, 224)
+scale = Vector2(5, 5)
+texture = ExtResource("5_p3k1t")
+
+[node name="SpriteDemoElderich" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(544, 224)
+scale = Vector2(5, 5)
+texture = ExtResource("6_ri17d")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
