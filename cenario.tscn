@@ -3319,9 +3319,10 @@ layer_2/tile_data = PackedInt32Array(3670061, 458752, 43, 3604525, 458752, 43, 3
 
 [node name="Player" parent="." instance=ExtResource("2_0viaw")]
 z_index = 1
-position = Vector2(1476, 1990)
+position = Vector2(747, 1059)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 blend_mode = 1
 
 [node name="AreaDemoA" type="Area2D" parent="."]
@@ -3365,8 +3366,14 @@ layer_0/tile_data = PackedInt32Array(655378, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Batalha" parent="CanvasLayer" instance=ExtResource("6_mph2q")]
+[node name="Batalha" parent="CanvasLayer" node_paths=PackedStringArray("porta1", "porta2", "porta3", "porta4", "porta5", "porta6") instance=ExtResource("6_mph2q")]
 visible = false
+porta1 = NodePath("../../Portas/Porta1")
+porta2 = NodePath("../../Portas/Porta2")
+porta3 = NodePath("../../Portas/Porta3")
+porta4 = NodePath("../../Portas/Porta4")
+porta5 = NodePath("../../Portas/Porta5")
+porta6 = NodePath("../../Portas/Porta6")
 
 [node name="AreaDemoMaster" type="Area2D" parent="."]
 
@@ -3396,6 +3403,7 @@ offset_top = 544.0
 offset_right = 756.0
 offset_bottom = 567.0
 text = "PORTA 1"
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta1"]
 position = Vector2(720, 560.5)
@@ -3409,6 +3417,7 @@ offset_top = 546.0
 offset_right = 947.0
 offset_bottom = 569.0
 text = "PORTA 2"
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta2"]
 position = Vector2(913, 561.5)
@@ -3422,6 +3431,7 @@ offset_top = 545.0
 offset_right = 1330.0
 offset_bottom = 568.0
 text = "PORTA 3"
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta3"]
 position = Vector2(1296.25, 561.5)
@@ -3440,6 +3450,7 @@ offset_top = 545.0
 offset_right = 1330.0
 offset_bottom = 568.0
 text = "PORTA 4"
+metadata/_edit_use_anchors_ = true
 
 [node name="Porta5" type="StaticBody2D" parent="Portas"]
 position = Vector2(514, 361)
@@ -3454,12 +3465,13 @@ offset_top = 545.0
 offset_right = 1330.0
 offset_bottom = 568.0
 text = "PORTA 5"
+metadata/_edit_use_anchors_ = true
 
 [node name="Porta6" type="StaticBody2D" parent="Portas"]
 position = Vector2(516, 839)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta6"]
-position = Vector2(1292, 558)
+position = Vector2(1291, 555)
 shape = SubResource("RectangleShape2D_t7uqs")
 
 [node name="Label3" type="Label" parent="Portas/Porta6"]
@@ -3468,6 +3480,7 @@ offset_top = 545.0
 offset_right = 1329.0
 offset_bottom = 568.0
 text = "PORTA 6"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="AreaDemoA" to="CanvasLayer/Batalha" method="_on_area_demo_a_body_entered"]
 [connection signal="body_entered" from="AreaDemoB" to="CanvasLayer/Batalha" method="_on_area_demo_b_body_entered"]

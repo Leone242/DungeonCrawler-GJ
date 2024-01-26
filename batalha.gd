@@ -2,14 +2,13 @@ extends Node2D
 
 var zombarias = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@export var porta1: StaticBody2D
+@export var porta2: StaticBody2D
+@export var porta3: StaticBody2D
+@export var porta4: StaticBody2D
+@export var porta5: StaticBody2D
+@export var porta6: StaticBody2D
 
 
 func _on_trocadilho_pressed():
@@ -56,44 +55,48 @@ func _on_fugir_mouse_exited():
 
 
 func _on_area_demo_a_body_entered(body):
-	self.show()
-	get_node("descDemo").text = "Descrição do caramunhão"
-	$SpriteDemoA.show()
-	zombarias = 0
+	if body.name == "Player":
+		self.show()
+		get_node("descDemo").text = "Descrição do caramunhão"
+		$SpriteDemoA.show()
+		zombarias = 0
 	
 func _on_area_demo_b_body_entered(body):
-	self.show()
-	get_node("descDemo").text = "Descrição do capiroto"
-	$SpriteDemoB.show()
-	zombarias = 0
+	if body.name == "Player":
+		self.show()
+		get_node("descDemo").text = "Descrição do capiroto"
+		$SpriteDemoB.show()
+		zombarias = 0
 
 func _on_area_demo_c_body_entered(body):
-	self.show()
-	get_node("descDemo").text = "Descrição do tinhoso"
-	$SpriteDemoC.show()
-	zombarias = 0
+	if body.name == "Player":
+		self.show()
+		get_node("descDemo").text = "Descrição do tinhoso"
+		$SpriteDemoC.show()
+		zombarias = 0
 
 
 
 
 func _on_area_demo_master_body_entered(body):
-	await get_tree().create_timer(0.5).timeout
-	$"../../AreaDemoMaster/LuzBoss".show()
-	await get_tree().create_timer(2.0).timeout
-	self.show()
-	get_node("descDemo").text = "Descrição do demônio mais pika dessa dungeon"
-	$SpriteDemoElderich.show()
-	zombarias = 0
+	if body.name == "Player":
+		await get_tree().create_timer(0.5).timeout
+		$"../../AreaDemoMaster/LuzBoss".show()
+		await get_tree().create_timer(1.0).timeout
+		self.show()
+		get_node("descDemo").text = "Descrição do demônio mais pika dessa dungeon"
+		$SpriteDemoElderich.show()
+		zombarias = 0
 	
 func abrirPorta(porta: int):
 	match porta:
-		1: get_tree().get_node("../../Portas/Porta1").hide()
-		2: pass
-		3: pass
-		4: pass
-		5: pass
-		6: pass
+		1: porta1.queue_free()
+		2: porta2.queue_free()
+		3: porta3.queue_free()
+		4: porta4.queue_free()
+		5: porta5.queue_free()
+		6: porta6.queue_free()
 		
 func vencer():
-	pass
-	
+	abrirPorta(4)
+	print("abriu")
