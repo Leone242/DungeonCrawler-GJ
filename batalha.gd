@@ -17,7 +17,7 @@ var porta: int
 
 func _on_trocadilho_pressed():
 	zombarias+=1
-	
+	$AcaoEfetiva.play()
 	$Control/Trocadilho.disabled = true
 	$Control/Zoar.disabled = true
 	$Control/Fugir.disabled = true
@@ -32,7 +32,7 @@ func _on_trocadilho_pressed():
 
 func _on_zoar_pressed():
 	zombarias+=1
-	
+	$AcaoEfetiva.play()
 	$Control/Trocadilho.disabled = true
 	$Control/Zoar.disabled = true
 	$Control/Fugir.disabled = true
@@ -46,7 +46,7 @@ func _on_zoar_pressed():
 func _on_fugir_pressed():
 	self.hide()
 	zombarias = 0
-
+	$AcaoFalha.play()
 
 
 func _on_trocadilho_mouse_entered():
@@ -71,6 +71,8 @@ func _on_fugir_mouse_exited():
 func _on_area_demo_a_body_entered(body):
 	textoDescricao = "Descrição do caramunhão"
 	if body.name == "Player":
+		$Encontro.play()
+		await get_tree().create_timer(0.5).timeout
 		diabo = $"../../AreaDemoA"
 		porta = 2
 		self.show()
@@ -80,6 +82,8 @@ func _on_area_demo_a_body_entered(body):
 func _on_area_demo_b_body_entered(body):
 	textoDescricao = "Descrição do capiroto"
 	if body.name == "Player":
+		$Encontro.play()
+		await get_tree().create_timer(0.5).timeout
 		diabo = $"../../AreaDemoB"
 		porta = 4
 		self.show()
@@ -89,6 +93,8 @@ func _on_area_demo_b_body_entered(body):
 func _on_area_demo_c_body_entered(body):
 	textoDescricao = "Descrição do tinhoso"
 	if body.name == "Player":
+		$Encontro.play()
+		await get_tree().create_timer(0.5).timeout
 		diabo = $"../../AreaDemoC"
 		porta = 1
 		self.show()
@@ -101,6 +107,8 @@ func _on_area_demo_c_body_entered(body):
 func _on_area_demo_master_body_entered(body):
 	textoDescricao = "Descrição do demônio mais pika dessa dungeon"
 	if body.name == "Player":
+		await get_tree().create_timer(0.5).timeout
+		$Encontro.play()
 		diabo = $"../../AreaDemoMaster"
 		porta = 5
 		await get_tree().create_timer(0.5).timeout
@@ -111,6 +119,7 @@ func _on_area_demo_master_body_entered(body):
 		zombarias = 0
 	
 func abrirPorta(porta: int):
+	$Porta.play()
 	match porta:
 		1: porta1.queue_free()
 		2: 
@@ -125,6 +134,7 @@ func abrirPorta(porta: int):
 		
 func vencer():
 	abrirPorta(porta)
+	$Vitoria.play()
 	$descDemo.text = "você venceu e uma porta se abriu"
 	await get_tree().create_timer(3.0).timeout
 	diabo.queue_free()
@@ -136,6 +146,8 @@ func vencer():
 	
 func turnoOponente():
 	$descDemo.text = "o sete pele atacou causando dano"
+	await get_tree().create_timer(1.0).timeout
+	$Dano.play()
 	await get_tree().create_timer(2.0).timeout
 	$descDemo.text = textoDescricao
 	$Control/Trocadilho.disabled = false

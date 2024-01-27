@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bufe4chhh7kpw"]
+[gd_scene load_steps=15 format=3 uid="uid://bufe4chhh7kpw"]
 
 [ext_resource type="Script" path="res://batalha.gd" id="1_uwuey"]
 [ext_resource type="Texture2D" uid="uid://biprkw37l3xs7" path="res://Sprites/Personagem (Cenario)/Gnomo.png" id="2_bm0gq"]
@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dpcvyijaqw17f" path="res://Sprites/Personagem (Cenario)/demonioB.png" id="4_ck0cg"]
 [ext_resource type="Texture2D" uid="uid://cn0iuxx66bioc" path="res://Sprites/Personagem (Cenario)/demonioC.png" id="5_p3k1t"]
 [ext_resource type="Texture2D" uid="uid://dpnevjdperlqf" path="res://Sprites/Personagem (Cenario)/Eldericth.png" id="6_ri17d"]
+[ext_resource type="AudioStream" uid="uid://c3k5ndxo07fx2" path="res://audio/dano.mp3" id="7_unukl"]
+[ext_resource type="AudioStream" uid="uid://bchu0y06y00d3" path="res://audio/vitoria.mp3" id="8_ux4q1"]
+[ext_resource type="AudioStream" uid="uid://bbawy6utoxo23" path="res://audio/derrota.mp3" id="9_ohjw3"]
+[ext_resource type="AudioStream" uid="uid://d011sorng2pgf" path="res://audio/encontro.mp3" id="10_jpl1x"]
+[ext_resource type="AudioStream" uid="uid://yfijqceumljx" path="res://audio/acao efetiva.mp3" id="11_ufkbg"]
+[ext_resource type="AudioStream" uid="uid://l20fv6stcas7" path="res://audio/pimmmm.mp3" id="11_yld1c"]
+[ext_resource type="AudioStream" uid="uid://5wemss7eae60" path="res://audio/acao falha.mp3" id="12_536pd"]
+[ext_resource type="AudioStream" uid="uid://cbi774e2osxsa" path="res://audio/ai.mp3" id="13_dic1q"]
 
 [node name="Batalha" type="Node2D"]
 script = ExtResource("1_uwuey")
@@ -89,6 +97,30 @@ offset_top = 576.0
 offset_right = 178.0
 offset_bottom = 599.0
 text = "HP 50/50"
+
+[node name="Dano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_unukl")
+
+[node name="Vitoria" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ux4q1")
+
+[node name="Derrota" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ohjw3")
+
+[node name="Encontro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_jpl1x")
+
+[node name="AcaoEfetiva" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ufkbg")
+
+[node name="AcaoFalha" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_536pd")
+
+[node name="Ai" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_dic1q")
+
+[node name="Porta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_yld1c")
 
 [connection signal="mouse_entered" from="Control/Trocadilho" to="." method="_on_trocadilho_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Trocadilho" to="." method="_on_trocadilho_mouse_exited"]

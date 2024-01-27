@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=41 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dpnevjdperlqf" path="res://Sprites/Personagem (Cenario)/Eldericth.png" id="7_ji314"]
 [ext_resource type="PackedScene" uid="uid://nojojrwqwan5" path="res://menuzinho.tscn" id="8_6e6sq"]
 [ext_resource type="Texture2D" uid="uid://cf8dovs532rin" path="res://Sprites/Personagem (Cenario)/Troll.png" id="8_dd0x8"]
+[ext_resource type="AudioStream" uid="uid://dkuiy002gox3t" path="res://audio/ambiente.mp3" id="11_q0isp"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qfuxr"]
 polygon = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -3371,7 +3372,7 @@ layer_3/tile_data = PackedInt32Array(720917, 0, 4, 720918, 0, 4, 720919, 0, 4, 7
 
 [node name="Player" parent="." instance=ExtResource("2_0viaw")]
 z_index = 1
-position = Vector2(747, 1059)
+position = Vector2(370, 1078)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
@@ -3592,6 +3593,10 @@ shape = SubResource("CapsuleShape2D_wv4jd")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
 position = Vector2(849, 1074)
 occluder = SubResource("OccluderPolygon2D_vi1y2")
+
+[node name="Ambiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_q0isp")
+autoplay = true
 
 [connection signal="body_entered" from="AreaDemoA" to="CanvasLayer/Batalha" method="_on_area_demo_a_body_entered"]
 [connection signal="body_entered" from="AreaDemoB" to="CanvasLayer/Batalha" method="_on_area_demo_b_body_entered"]
