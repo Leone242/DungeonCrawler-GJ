@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=36 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cn0iuxx66bioc" path="res://Sprites/Personagem (Cenario)/demonioC.png" id="5_uyjbq"]
 [ext_resource type="PackedScene" uid="uid://bufe4chhh7kpw" path="res://batalha.tscn" id="6_mph2q"]
 [ext_resource type="Texture2D" uid="uid://dpnevjdperlqf" path="res://Sprites/Personagem (Cenario)/Eldericth.png" id="7_ji314"]
+[ext_resource type="Texture2D" uid="uid://cf8dovs532rin" path="res://Sprites/Personagem (Cenario)/Troll.png" id="8_dd0x8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qfuxr"]
 polygon = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -3222,58 +3223,34 @@ sources/0 = SubResource("TileSetAtlasSource_7ukgd")
 radius = 51.0
 height = 102.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ys1j4"]
+radius = 22.0
+height = 54.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7s4rs"]
+polygon = PackedVector2Array(23, -30, 31, -22, 36, -22, 41, -29, 49, -21, 44, -11, 57, -2, 60, 16, 51, 20, 47, 9, 45, 25, 38, 26, 33, 18, 27, 26, 23, 26, 20, 10, 14, 21, 7, 18, 9, 1, 21, -10, 17, -20)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eqyf1"]
 radius = 52.0
 height = 104.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p67aq"]
+radius = 20.0
+height = 54.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wxl6j"]
+polygon = PackedVector2Array(-3, -92, -2, -85, 5, -85, 5, -93, 15, -89, 16, -79, 12, -76, 26, -65, 26, -46, 19, -46, 14, -55, 11, -38, 1, -43, -7, -39, -11, -55, -17, -46, -24, -46, -22, -68, -10, -74, -15, -79, -15, -89)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctaih"]
 radius = 56.0
 height = 112.0
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qp2uj"]
-polygon = PackedVector2Array(-8.48528, -28.0191, -14.5841, -23.0694, -14.4957, -14.1421, -10.7834, -9.89949, -19.4454, -6.54074, -22.8042, -2.03293, -22.539, 2.03293, -26.4281, 6.89429, -26.6933, 17.059, -23.5997, 21.8319, -19.1803, 21.8319, -16.8822, 19.0919, -17.1473, 14.2305, -13.7002, 6.98268, -12.286, 12.6395, -12.8163, 17.5893, -10.3414, 26.4281, -6.36396, 26.9585, -0.265163, 18.2964, 6.01041, 26.7817, 10.1647, 26.6049, 12.7279, 18.2964, 12.8163, 11.9324, 14.0537, 6.98268, 17.9428, 14.4073, 17.1473, 19.7106, 19.3571, 21.7435, 24.13, 21.5668, 26.7817, 16.9706, 26.7817, 6.71752, 22.8926, 2.56326, 22.6274, -2.91681, 18.3848, -7.24784, 11.1369, -8.92722, 14.5841, -14.3189, 14.8492, -22.8042, 9.28078, -28.0191, 8.39689, -23.9532, 4.06586, -20.5945, -3.88909, -20.4177, -7.95495, -22.981)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4t6r"]
+radius = 19.0
+height = 48.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ws0wx"]
-texture = ExtResource("3_wghu4")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_qp2uj")
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSet" id="TileSet_gege7"]
-tile_size = Vector2i(64, 64)
-occlusion_layer_0/light_mask = 1
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_ws0wx")
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f6krg"]
-polygon = PackedVector2Array(-4.15425, -28.6378, -9.104, -28.5494, -14.6725, -23.5113, -15.026, -14.4073, -10.7834, -11.0485, -10.6066, -9.36916, -16.2635, -8.57367, -21.8319, -5.12652, -21.7435, 0, -25.3675, 3.09359, -25.8094, 17.059, -23.4229, 18.6499, -19.1803, 18.9151, -16.2635, 16.1751, -15.9099, 11.0485, -14.3189, 9.81111, -14.0537, 5.92202, -11.844, 8.83884, -12.0208, 19.3571, -9.36917, 25.721, -4.77297, 25.8094, -2.38648, 21.6551, -2.03293, 19.799, 2.38649, 20.0642, 2.38649, 21.7435, 4.94975, 25.721, 9.81111, 25.9862, 11.9324, 19.799, 12.0208, 9.28078, 13.5234, 6.36396, 14.4073, 10.0763, 16.2635, 12.7279, 16.4402, 15.9983, 19.7106, 18.7383, 24.13, 18.7383, 26.163, 16.7938, 26.0746, 3.53554, 21.9203, 0, 21.7435, -5.3033, 16.1751, -8.57367, 11.0485, -9.104, 11.1369, -10.7834, 15.026, -14.3189, 15.1144, -23.5113, 9.54594, -28.5494, 4.59619, -28.461, 4.24264, -24.6603, 5.48008, -22.539, 5.12652, -20.6829, -4.59619, -20.5061, -5.21491, -22.8926, -4.33103, -24.7487)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vi17d"]
-texture = ExtResource("4_yxgp8")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_f6krg")
-
-[sub_resource type="TileSet" id="TileSet_8p8ja"]
-tile_size = Vector2i(64, 64)
-occlusion_layer_0/light_mask = 1
-sources/1 = SubResource("TileSetAtlasSource_vi17d")
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bw0ch"]
-polygon = PackedVector2Array(-15.9099, -25.9862, -19.4454, -22.8926, -19.799, -15.9983, -12.3744, -9.54594, -11.844, -6.89429, -16.5286, -6.8059, -21.7435, -2.56326, -21.4784, 2.38649, -24.3952, 5.48008, -25.0139, 7.95495, -26.5165, 9.19239, -26.8701, 13.877, -23.6881, 16.4402, -21.3016, 16.617, -18.208, 13.5234, -18.3848, 11.9324, -15.2912, 10.0763, -15.5563, 7.86657, -12.9047, 8.04334, -11.7556, 9.8995, -11.9324, 17.5893, -9.81111, 23.4229, -5.12652, 23.7765, -2.03293, 20.7713, -2.20971, 19.0919, 2.12132, 19.0919, 2.38649, 20.6829, 5.03814, 24.13, 10.253, 23.5113, 11.844, 17.9428, 12.1976, 10.0763, 13.0815, 7.77818, 15.5564, 8.04334, 15.7331, 10.0763, 17.8544, 11.5789, 18.3848, 13.7886, 21.5668, 17.1473, 24.13, 16.7054, 26.8701, 13.7886, 26.8701, 9.36917, 24.572, 7.6014, 24.8371, 5.39169, 21.8319, 3.00521, 22.0971, -1.5026, 17.7661, -6.8059, 12.8163, -6.8059, 11.0485, -6.09879, 11.7557, -8.75044, 19.1803, -15.1144, 19.7106, -22.4506, 16.0867, -25.8978, 14.0537, -25.5442, 11.3137, -19.0035, 5.74524, -17.2357, -6.45235, -17.5893, -12.1092, -19.2687, -13.1699, -24.9255)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kji2k"]
-texture = ExtResource("5_uyjbq")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bw0ch")
-
-[sub_resource type="TileSet" id="TileSet_cboda"]
-tile_size = Vector2i(64, 64)
-occlusion_layer_0/light_mask = 1
-sources/0 = SubResource("TileSetAtlasSource_kji2k")
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8qtl0"]
+polygon = PackedVector2Array(18, -27, 27, -20, 36, -20, 46, -27, 51, -18, 44, -10, 52, -5, 58, 9, 54, 14, 45, 6, 39, 21, 32, 16, 24, 21, 19, 8, 10, 14, 4, 9, 11, -6, 21, -10, 12, -19)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofp7b"]
 radius = 155.0
@@ -3293,14 +3270,39 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkucr"]
 size = Vector2(98, 29)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dkek0"]
+polygon = PackedVector2Array(673, 546, 768, 546, 768, 575, 673, 575)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oq6po"]
 size = Vector2(96, 29)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u52k5"]
+polygon = PackedVector2Array(864, 547, 865, 577, 960, 576, 960, 547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_co2qn"]
 size = Vector2(96.5, 29)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_clth2"]
+polygon = PackedVector2Array(1249, 546, 1248, 575, 1344, 575, 1344, 547)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7uqs"]
 size = Vector2(32.5, 103)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f6fgl"]
+polygon = PackedVector2Array(1275, 512, 1275, 607, 1308, 607, 1307, 512)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_64kqx"]
+polygon = PackedVector2Array(1278, 504, 1278, 599, 1310, 598, 1310, 504)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_06std"]
+polygon = PackedVector2Array(1276, 506, 1275, 600, 1308, 601, 1308, 505, 1275, 504)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wv4jd"]
+radius = 23.0
+height = 50.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vi1y2"]
+polygon = PackedVector2Array(-397, -21, -394, -17, -384, -23, -375, -17, -371, -21, -367, -14, -357, 14, -369, 17, -370, 25, -379, 25, -384, 21, -392, 27, -400, 26, -402, 18, -412, 16, -402, -12, -399, -21)
 
 [node name="Cenario" type="Node2D"]
 
@@ -3333,6 +3335,19 @@ z_index = 1
 position = Vector2(32, -1)
 shape = SubResource("CapsuleShape2D_n4x83")
 
+[node name="Sprite2D" type="Sprite2D" parent="AreaDemoA"]
+position = Vector2(33, -1)
+texture = ExtResource("3_wghu4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AreaDemoA"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDemoA/StaticBody2D"]
+position = Vector2(32, -1)
+shape = SubResource("CapsuleShape2D_ys1j4")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="AreaDemoA/StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_7s4rs")
+
 [node name="AreaDemoB" type="Area2D" parent="."]
 position = Vector2(1248, 1248)
 
@@ -3340,6 +3355,19 @@ position = Vector2(1248, 1248)
 z_index = 1
 position = Vector2(1, -63)
 shape = SubResource("CapsuleShape2D_eqyf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="AreaDemoB"]
+position = Vector2(1, -64)
+texture = ExtResource("4_yxgp8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AreaDemoB"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDemoB/StaticBody2D"]
+position = Vector2(1, -64)
+shape = SubResource("CapsuleShape2D_p67aq")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="AreaDemoB/StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_wxl6j")
 
 [node name="AreaDemoC" type="Area2D" parent="."]
 position = Vector2(1152, 672)
@@ -3349,20 +3377,18 @@ z_index = 1
 position = Vector2(31, 0)
 shape = SubResource("CapsuleShape2D_ctaih")
 
-[node name="DemoA" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_gege7")
-format = 2
-layer_0/tile_data = PackedInt32Array(655372, 1, 0)
+[node name="Sprite2D" type="Sprite2D" parent="AreaDemoC"]
+position = Vector2(31, -2)
+texture = ExtResource("5_uyjbq")
 
-[node name="DemoB" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_8p8ja")
-format = 2
-layer_0/tile_data = PackedInt32Array(1179667, 1, 0)
+[node name="StaticBody2D" type="StaticBody2D" parent="AreaDemoC"]
 
-[node name="DemoC" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_cboda")
-format = 2
-layer_0/tile_data = PackedInt32Array(655378, 0, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDemoC/StaticBody2D"]
+position = Vector2(31, 1)
+shape = SubResource("CapsuleShape2D_e4t6r")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="AreaDemoC/StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_8qtl0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -3409,6 +3435,9 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(720, 560.5)
 shape = SubResource("RectangleShape2D_lkucr")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Portas/Porta1"]
+occluder = SubResource("OccluderPolygon2D_dkek0")
+
 [node name="Porta2" type="StaticBody2D" parent="Portas"]
 
 [node name="Label2" type="Label" parent="Portas/Porta2"]
@@ -3423,6 +3452,9 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(913, 561.5)
 shape = SubResource("RectangleShape2D_oq6po")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Portas/Porta2"]
+occluder = SubResource("OccluderPolygon2D_u52k5")
+
 [node name="Porta3" type="StaticBody2D" parent="Portas"]
 
 [node name="Label3" type="Label" parent="Portas/Porta3"]
@@ -3436,6 +3468,9 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Porta3"]
 position = Vector2(1296.25, 561.5)
 shape = SubResource("RectangleShape2D_co2qn")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Portas/Porta3"]
+occluder = SubResource("OccluderPolygon2D_clth2")
 
 [node name="Porta4" type="StaticBody2D" parent="Portas"]
 position = Vector2(69, 640)
@@ -3452,6 +3487,9 @@ offset_bottom = 568.0
 text = "PORTA 4"
 metadata/_edit_use_anchors_ = true
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Portas/Porta4"]
+occluder = SubResource("OccluderPolygon2D_f6fgl")
+
 [node name="Porta5" type="StaticBody2D" parent="Portas"]
 position = Vector2(514, 361)
 
@@ -3467,6 +3505,9 @@ offset_bottom = 568.0
 text = "PORTA 5"
 metadata/_edit_use_anchors_ = true
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Portas/Porta5"]
+occluder = SubResource("OccluderPolygon2D_64kqx")
+
 [node name="Porta6" type="StaticBody2D" parent="Portas"]
 position = Vector2(516, 839)
 
@@ -3481,6 +3522,24 @@ offset_right = 1329.0
 offset_bottom = 568.0
 text = "PORTA 6"
 metadata/_edit_use_anchors_ = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Portas/Porta6"]
+occluder = SubResource("OccluderPolygon2D_06std")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Troll" type="Sprite2D" parent="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(464, 1074)
+texture = ExtResource("8_dd0x8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(464, 1077)
+shape = SubResource("CapsuleShape2D_wv4jd")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+position = Vector2(849, 1074)
+occluder = SubResource("OccluderPolygon2D_vi1y2")
 
 [connection signal="body_entered" from="AreaDemoA" to="CanvasLayer/Batalha" method="_on_area_demo_a_body_entered"]
 [connection signal="body_entered" from="AreaDemoB" to="CanvasLayer/Batalha" method="_on_area_demo_b_body_entered"]
