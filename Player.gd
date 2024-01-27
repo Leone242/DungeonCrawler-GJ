@@ -3,6 +3,10 @@ extends CharacterBody2D
 
 var speed = 200
 
+func _process(delta):
+	if Input.is_action_just_pressed("esque"):
+		$"../CanvasLayer/Menuzinho".show()
+		speed = 0
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -21,4 +25,8 @@ func _on_batalha_draw():
 
 
 func _on_batalha_hidden():
+	speed = 200
+
+
+func _on_menuzinho_hidden():
 	speed = 200

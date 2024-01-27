@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=40 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
 [ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cn0iuxx66bioc" path="res://Sprites/Personagem (Cenario)/demonioC.png" id="5_uyjbq"]
 [ext_resource type="PackedScene" uid="uid://bufe4chhh7kpw" path="res://batalha.tscn" id="6_mph2q"]
 [ext_resource type="Texture2D" uid="uid://dpnevjdperlqf" path="res://Sprites/Personagem (Cenario)/Eldericth.png" id="7_ji314"]
+[ext_resource type="PackedScene" uid="uid://nojojrwqwan5" path="res://menuzinho.tscn" id="8_6e6sq"]
 [ext_resource type="Texture2D" uid="uid://cf8dovs532rin" path="res://Sprites/Personagem (Cenario)/Troll.png" id="8_dd0x8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qfuxr"]
@@ -3449,6 +3450,9 @@ porta4 = NodePath("../../Portas/Porta4")
 porta5 = NodePath("../../Portas/Porta5")
 porta6 = NodePath("../../Portas/Porta6")
 
+[node name="Menuzinho" parent="CanvasLayer" instance=ExtResource("8_6e6sq")]
+visible = false
+
 [node name="AreaDemoMaster" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDemoMaster"]
@@ -3594,4 +3598,5 @@ occluder = SubResource("OccluderPolygon2D_vi1y2")
 [connection signal="body_entered" from="AreaDemoC" to="CanvasLayer/Batalha" method="_on_area_demo_c_body_entered"]
 [connection signal="draw" from="CanvasLayer/Batalha" to="Player" method="_on_batalha_draw"]
 [connection signal="hidden" from="CanvasLayer/Batalha" to="Player" method="_on_batalha_hidden"]
+[connection signal="hidden" from="CanvasLayer/Menuzinho" to="Player" method="_on_menuzinho_hidden"]
 [connection signal="body_entered" from="AreaDemoMaster" to="CanvasLayer/Batalha" method="_on_area_demo_master_body_entered"]

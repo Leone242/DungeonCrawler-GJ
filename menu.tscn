@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx1lx42tig8tj"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_wsfye"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_wsfye")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1096.0
+offset_bottom = 645.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 192.0
+offset_right = 669.0
+offset_bottom = 569.0
+theme_override_constants/separation = 24
+
+[node name="Jogar" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Jogar"
+
+[node name="Opções" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Opções"
+
+[node name="Sair" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sair"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Opções" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
