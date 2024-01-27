@@ -102,6 +102,7 @@ func _on_area_demo_master_body_entered(body):
 	textoDescricao = "Descrição do demônio mais pika dessa dungeon"
 	if body.name == "Player":
 		diabo = $"../../AreaDemoMaster"
+		porta = 5
 		await get_tree().create_timer(0.5).timeout
 		$"../../AreaDemoMaster/LuzBoss".show()
 		await get_tree().create_timer(1.0).timeout
@@ -117,7 +118,9 @@ func abrirPorta(porta: int):
 			porta3.queue_free()
 		3: porta3.queue_free()
 		4: porta4.queue_free()
-		5: porta5.queue_free()
+		5: 
+			porta5.queue_free()
+			porta6.queue_free()
 		6: porta6.queue_free()
 		
 func vencer():
