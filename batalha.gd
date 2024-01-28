@@ -72,6 +72,7 @@ func _on_area_demo_a_body_entered(body):
 	textoDescricao = "Descrição do caramunhão"
 	if body.name == "Player":
 		$Encontro.play()
+		$"../../AreaDemoA/StaticBody2D/PointLight2D".show()
 		await get_tree().create_timer(0.5).timeout
 		diabo = $"../../AreaDemoA"
 		porta = 2
@@ -83,6 +84,7 @@ func _on_area_demo_b_body_entered(body):
 	textoDescricao = "Descrição do capiroto"
 	if body.name == "Player":
 		$Encontro.play()
+		$"../../AreaDemoB/StaticBody2D/PointLight2D2".show()
 		await get_tree().create_timer(0.5).timeout
 		diabo = $"../../AreaDemoB"
 		porta = 4
@@ -94,6 +96,7 @@ func _on_area_demo_c_body_entered(body):
 	textoDescricao = "Descrição do tinhoso"
 	if body.name == "Player":
 		$Encontro.play()
+		$"../../AreaDemoC/StaticBody2D/PointLight2D3".show()
 		await get_tree().create_timer(0.5).timeout
 		diabo = $"../../AreaDemoC"
 		porta = 1

@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5syikwr8i5by"]
+
+[ext_resource type="Texture2D" uid="uid://b6pwhy55t3nfl" path="res://Sprites/Tileset (Dungeon)/TILESET-DUNGEON-Sheet.png" id="1_b6654"]
+[ext_resource type="Script" path="res://introducao.gd" id="1_qx3d0"]
+
+[node name="Introducao" type="Node2D"]
+script = ExtResource("1_qx3d0")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1095.0
+offset_bottom = 653.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(542.5, 321)
+scale = Vector2(34.9063, 21.0625)
+texture = ExtResource("1_b6654")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="Aviso" type="Label" parent="."]
+visible = false
+offset_left = 251.0
+offset_top = 100.0
+offset_right = 833.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 34
+text = "Você acaba de ser selecionado
+ como voluntário para o sacrifício. 
+Boa sorte, gnomozinho."
+horizontal_alignment = 1
+
+[node name="Falas" type="Panel" parent="."]
+visible = false
+offset_left = 207.0
+offset_top = 360.0
+offset_right = 871.0
+offset_bottom = 559.0
+
+[node name="Fala1" type="Label" parent="Falas"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 632.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 30
+text = "...Mas eu NUNCA CONCORDEI COM ISSO!!!"
+
+[node name="Fala2" type="Label" parent="Falas"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 632.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 30
+text = "TUDO DE PIOR PRA TUDO!"
+
+[node name="Fala3" type="Label" parent="Falas"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 632.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 30
+text = "Cara, como eu vou sair daqui?"
+
+[node name="Fala4" type="Label" parent="Falas"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 632.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 30
+text = "Tudo é muito pesado 
+e eu não tenho força pra um soco."
+
+[node name="Fala5" type="Label" parent="Falas"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 632.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 30
+text = "Como eu vou sair daqui..."
