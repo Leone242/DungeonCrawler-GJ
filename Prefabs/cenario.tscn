@@ -1,16 +1,17 @@
-[gd_scene load_steps=46 format=3 uid="uid://bjdpssl77mj38"]
+[gd_scene load_steps=48 format=3 uid="uid://bjdpssl77mj38"]
 
 [ext_resource type="Texture2D" uid="uid://chctm1l7br5lj" path="res://[Base]BaseChip_pipo.png" id="1_plorp"]
-[ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://player.tscn" id="2_0viaw"]
+[ext_resource type="PackedScene" uid="uid://dj08vxx5imjqm" path="res://Prefabs/player.tscn" id="2_0viaw"]
 [ext_resource type="Texture2D" uid="uid://b6pwhy55t3nfl" path="res://Sprites/Tileset (Dungeon)/TILESET-DUNGEON-Sheet.png" id="2_8k48v"]
 [ext_resource type="Texture2D" uid="uid://dkjmd1gsgfm6r" path="res://Sprites/Personagem (Cenario)/demonioA.png" id="3_wghu4"]
 [ext_resource type="Texture2D" uid="uid://dpcvyijaqw17f" path="res://Sprites/Personagem (Cenario)/demonioB.png" id="4_yxgp8"]
 [ext_resource type="Texture2D" uid="uid://cn0iuxx66bioc" path="res://Sprites/Personagem (Cenario)/demonioC.png" id="5_uyjbq"]
-[ext_resource type="PackedScene" uid="uid://bufe4chhh7kpw" path="res://batalha.tscn" id="6_mph2q"]
-[ext_resource type="PackedScene" uid="uid://c5syikwr8i5by" path="res://introducao.tscn" id="7_j1qw8"]
+[ext_resource type="PackedScene" uid="uid://bufe4chhh7kpw" path="res://Prefabs/batalha.tscn" id="6_mph2q"]
+[ext_resource type="PackedScene" uid="uid://c5syikwr8i5by" path="res://Prefabs/introducao.tscn" id="7_j1qw8"]
 [ext_resource type="Texture2D" uid="uid://dpnevjdperlqf" path="res://Sprites/Personagem (Cenario)/Eldericth.png" id="7_ji314"]
-[ext_resource type="PackedScene" uid="uid://nojojrwqwan5" path="res://menuzinho.tscn" id="8_6e6sq"]
+[ext_resource type="PackedScene" uid="uid://nojojrwqwan5" path="res://Prefabs/menuzinho.tscn" id="8_6e6sq"]
 [ext_resource type="Texture2D" uid="uid://cf8dovs532rin" path="res://Sprites/Personagem (Cenario)/Troll.png" id="8_dd0x8"]
+[ext_resource type="Script" path="res://Prefabs/Troll.gd" id="11_1lert"]
 [ext_resource type="AudioStream" uid="uid://dkuiy002gox3t" path="res://audio/ambiente.mp3" id="11_q0isp"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qfuxr"]
@@ -3357,6 +3358,9 @@ gradient = SubResource("Gradient_n01py")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tthf5"]
+radius = 61.131
+
 [node name="Cenario" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3391,7 +3395,7 @@ layer_3/tile_data = PackedInt32Array(720917, 0, 4, 720918, 0, 4, 720919, 0, 4, 7
 
 [node name="Player" parent="." instance=ExtResource("2_0viaw")]
 z_index = 1
-position = Vector2(540, 1077)
+position = Vector2(557, 1080)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
@@ -3637,6 +3641,7 @@ metadata/_edit_use_anchors_ = true
 occluder = SubResource("OccluderPolygon2D_06std")
 
 [node name="Troll" type="StaticBody2D" parent="."]
+script = ExtResource("11_1lert")
 
 [node name="Troll" type="Sprite2D" parent="Troll"]
 y_sort_enabled = true
@@ -3659,8 +3664,83 @@ occluder = SubResource("OccluderPolygon2D_vi1y2")
 z_index = 1
 position = Vector2(465, 1076)
 scale = Vector2(1.32813, 1.35938)
+energy = 1.39
 texture = SubResource("GradientTexture2D_k2dxy")
 texture_scale = 1.61
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Troll"]
+position = Vector2(464, 1080)
+scale = Vector2(6.6125, -6.61563)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Troll"]
+
+[node name="Panel" type="Panel" parent="Troll/CanvasLayer"]
+visible = false
+offset_left = 1.0
+offset_top = 495.0
+offset_right = 1081.0
+offset_bottom = 638.0
+
+[node name="Label" type="Label" parent="Troll/CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 70.0
+offset_top = 19.0
+offset_right = 988.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 30
+text = "Troll:  hehehe e pensar que os gnomos eram companheiros...
+
+"
+
+[node name="Label2" type="Label" parent="Troll/CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 70.0
+offset_top = 19.0
+offset_right = 988.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 30
+text = "Hey, já que você vai ser mais um 
+pedaço de carne a ser rasgado por aqui...
+"
+
+[node name="Label3" type="Label" parent="Troll/CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 70.0
+offset_top = 19.0
+offset_right = 988.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 30
+text = "acho que vou te seguir por enquanto,
+vai que eu veja algo interresante... como vôlei."
+
+[node name="Label4" type="Label" parent="Troll/CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 70.0
+offset_top = 19.0
+offset_right = 988.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 30
+text = "Gnomo: ...Vôlei?"
+
+[node name="Label5" type="Label" parent="Troll/CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 70.0
+offset_top = 19.0
+offset_right = 988.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 30
+text = "Troll:  Sim, só que com gnomos como bolas hehehe..."
+
+[node name="Area2D" type="Area2D" parent="Troll"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Troll/Area2D"]
+position = Vector2(464, 1079)
+shape = SubResource("CircleShape2D_tthf5")
 
 [node name="Ambiente" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_q0isp")
@@ -3683,3 +3763,7 @@ kkkkkkkkkkkkkkkk"
 [connection signal="hidden" from="CanvasLayer/Batalha" to="Player" method="_on_batalha_hidden"]
 [connection signal="hidden" from="CanvasLayer/Menuzinho" to="Player" method="_on_menuzinho_hidden"]
 [connection signal="body_entered" from="AreaDemoMaster" to="CanvasLayer/Batalha" method="_on_area_demo_master_body_entered"]
+[connection signal="screen_exited" from="Troll/VisibleOnScreenNotifier2D" to="Troll" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="draw" from="Troll/CanvasLayer/Panel" to="Player" method="_on_panel_draw"]
+[connection signal="hidden" from="Troll/CanvasLayer/Panel" to="Player" method="_on_panel_hidden"]
+[connection signal="body_entered" from="Troll/Area2D" to="Troll" method="_on_area_2d_body_entered"]

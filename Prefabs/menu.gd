@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _on_jogar_pressed():
-	get_tree().change_scene_to_file("res://cenario.tscn")
+	get_tree().change_scene_to_file("res://Prefabs/cenario.tscn")
 
 
 func _on_opções_pressed():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dj08vxx5imjqm"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_fq7p0"]
+[ext_resource type="Script" path="res://Prefabs/Player.gd" id="1_fq7p0"]
 [ext_resource type="Texture2D" uid="uid://biprkw37l3xs7" path="res://Sprites/Personagem (Cenario)/Gnomo.png" id="2_mkejf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_stv3b"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bufe4chhh7kpw"]
 
-[ext_resource type="Script" path="res://batalha.gd" id="1_uwuey"]
+[ext_resource type="Script" path="res://Prefabs/batalha.gd" id="1_uwuey"]
 [ext_resource type="Texture2D" uid="uid://biprkw37l3xs7" path="res://Sprites/Personagem (Cenario)/Gnomo.png" id="2_bm0gq"]
 [ext_resource type="Texture2D" uid="uid://dkjmd1gsgfm6r" path="res://Sprites/Personagem (Cenario)/demonioA.png" id="3_iodm3"]
 [ext_resource type="Texture2D" uid="uid://dpcvyijaqw17f" path="res://Sprites/Personagem (Cenario)/demonioB.png" id="4_ck0cg"]

@@ -30,3 +30,11 @@ func _on_batalha_hidden():
 
 func _on_menuzinho_hidden():
 	speed = 200
+
+
+func _on_panel_draw():
+	speed = 0
+	
+
+func _on_panel_hidden():
+	speed = 200

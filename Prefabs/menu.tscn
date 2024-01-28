@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cx1lx42tig8tj"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_wsfye"]
+[ext_resource type="Script" path="res://Prefabs/menu.gd" id="1_wsfye"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_wsfye")
